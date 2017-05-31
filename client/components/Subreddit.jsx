@@ -8,6 +8,9 @@ const Subreddit = ({subreddits}) => (
       <Post
         key={i}
         title={post.title}
+        permalink={post.permalink}
+        url={post.url}
+        created={post.created}
         />
     )}
   </div>

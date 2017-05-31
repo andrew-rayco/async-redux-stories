@@ -10887,12 +10887,24 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Post = function Post(_ref) {
-  var title = _ref.title;
+var Post = function Post(props) {
   return _react2.default.createElement(
-    'div',
+    "div",
     null,
-    title
+    _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        "a",
+        { href: "http://reddit.com/" + props.permalink },
+        props.title
+      )
+    ),
+    _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement("img", { src: props.url, alt: props.title, width: "50%" })
+    )
   );
 };
 
@@ -10931,7 +10943,10 @@ var Subreddit = function Subreddit(_ref) {
     subreddits.map(function (post, i) {
       return _react2.default.createElement(_Post2.default, {
         key: i,
-        title: post.title
+        title: post.title,
+        permalink: post.permalink,
+        url: post.url,
+        created: post.created
       });
     })
   );

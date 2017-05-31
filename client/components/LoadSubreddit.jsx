@@ -12,9 +12,9 @@ class LoadSubreddit extends React.Component {
    }
 
 
-handleChange(e) {
-  this.setState({subreddit:e.target.value})
-}
+  handleChange(e) {
+    this.setState({subreddit:e.target.value})
+  }
 
 
   render () {
@@ -26,10 +26,6 @@ handleChange(e) {
     )
   }
 }
-
-
-
-
 
 LoadSubreddit = connect()(LoadSubreddit)
 
